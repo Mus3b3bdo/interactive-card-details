@@ -29,14 +29,14 @@ body {
 
 .left {
   position: relative;
-  background-image: url("../images/bg-main-desktop.png");
+  background-image: url("../src/images/bg-main-desktop.png");
   grid-column: 1;
   grid-row: span 2;
   z-index: 0;
 }
 
 .CardBack {
-  background-image: url("../images/bg-card-back.png");
+  background-image: url("../src/images/bg-card-back.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
