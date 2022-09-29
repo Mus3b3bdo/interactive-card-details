@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import CardBack from "./components/UI/CardBack";
+import CardFront from "./components/UI/CardFront";
+import LeftSide from "./components/UI/LeftSide";
+import RightSide from "./components/UI/RightSide";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+      <LeftSide>
+        <CardBack />
+        <CardFront />
+      </LeftSide>
+      <RightSide />
+      <footer>
+        Challenge by
         <a
-          className="App-link"
-          href="https://reactjs.org"
+          href="https://www.frontendmentor.io?ref=challenge"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noreferrer"
         >
-          Learn React
+          Frontend Mentor
         </a>
-      </header>
+        . Coded by <a href="/">Musab Abdo</a>.
+      </footer>
     </div>
   );
 }

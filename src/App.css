@@ -1,38 +1,138 @@
-.App {
-  text-align: center;
+/* General styles of Layout */
+::after,
+::before,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.125rem;
+  font-family: "Space Grotesk", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  /* Primary */
+  --active-input-border-color-from: hsl(249, 99%, 64%);
+  --active-input-border-color-to: hsl(278, 94%, 30%);
+  --input-error-color: hsl(0, 100%, 66%);
+
+  /* Neutral */
+  --White-color: hsl(0, 0%, 100%);
+  --Light-grayish-violet-color: hsl(270, 3%, 87%);
+  --Dark-grayish-violet-color: hsl(279, 6%, 55%);
+  --Very-dark-violet-color: hsl(278, 68%, 11%);
+}
+.App {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.left {
+  position: relative;
+  background-image: url("../images/bg-main-desktop.png");
+  grid-column: 1;
+  grid-row: span 2;
+  z-index: 0;
+}
+
+.CardBack {
+  background-image: url("../images/bg-card-back.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 70%;
+  min-height: 30%;
+  position: absolute;
+  left: calc(65%);
+  bottom: 17%;
+  z-index: -3;
+}
+.cardBackSpan {
+  position: absolute;
+  right: 27%;
+  top: 41%;
+  font-size: 1rem;
+}
+
+.CardFront {
+  background-image: url("../src/images/bg-card-front.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 70%;
+  min-height: 30%;
+  position: absolute;
+  left: 50%;
+  top: 17%;
+  z-index: -3;
+  color: var(--White-color);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid red;
+}
+.CardFront-p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  gap: 50;
+}
+.right {
+  background-color: var(--White-color);
+  grid-column: 2 / span 2;
+  grid-row: span 2;
+  display: grid;
+  place-items: center;
+}
+footer {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  line-height: 2.5;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  margin-inline-start: 0.4rem;
+  text-align: center;
+}
+/* Media quiries */
+@media (max-width: 60em) {
+  .left {
+    background-image: url("../src/images/bg-main-mobile.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 1 / span 4;
+    grid-row: 1;
+  }
+  .right {
+    grid-column: 1 / span 4;
+  }
+  .CardBack {
+    width: 75%;
+    min-height: 75%;
+    left: 20%;
+    bottom: 15%;
+  }
+  .cardBackSpan {
+    position: absolute;
+    right: 11%;
+    top: 44%;
+    font-size: 1rem;
+  }
+  .CardFront {
+    width: 75%;
+    min-height: 30%;
+    left: 5%;
+    bottom: -40%;
+  }
+  footer {
+    font-size: 0.5rem;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
