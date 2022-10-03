@@ -1,5 +1,5 @@
 import React from "react";
 import "../../App.css";
-export default function RightSide() {
-  return <div className="right">RightSide</div>;
+export default function RightSide({ children }) {
+  return <div className="right">{children}</div>;
 }

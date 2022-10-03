@@ -34,56 +34,93 @@ body {
   grid-row: span 2;
   z-index: 0;
 }
-
-.CardBack {
-  background-image: url("../src/images/bg-card-back.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 70%;
-  min-height: 30%;
-  position: absolute;
-  left: calc(65%);
-  bottom: 17%;
-  z-index: -3;
-}
-.cardBackSpan {
-  position: absolute;
-  right: 27%;
-  top: 41%;
-  font-size: 1rem;
-}
-
-.CardFront {
-  background-image: url("../src/images/bg-card-front.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 70%;
-  min-height: 30%;
-  position: absolute;
-  left: 50%;
-  top: 17%;
-  z-index: -3;
-  color: var(--White-color);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-  border: 1px solid red;
-}
-.CardFront-p {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.7rem;
-  gap: 50;
-}
 .right {
   background-color: var(--White-color);
-  grid-column: 2 / span 2;
+  grid-column: 2 / span 3;
   grid-row: span 2;
   display: grid;
   place-items: center;
+}
+.CardBack,
+.CardFront {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 88%;
+  width: 88%;
+  min-height: 30%;
+  z-index: -3;
+  position: absolute;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 5px rgba(92, 91, 91, 0.3);
+}
+.CardFront {
+  background-image: url("../src/images/bg-card-front.png");
+  top: 17%;
+  transform: translateX(34%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--White-color);
+  font-family: Space Grotesk;
+}
+.CardBack {
+  background-image: url("../src/images/bg-card-back.png");
+  transform: translate(55%);
+  bottom: 17%;
+}
+.cardBackSpan {
+  position: absolute;
+  right: 12%;
+  top: 42%;
+  font-size: 0.9rem;
+  color: var(--Light-grayish-violet-color);
+}
+
+.FormContainer {
+  max-width: 40%;
+  width: 40%;
+  min-height: 60%;
+}
+
+label {
+  text-transform: uppercase;
+}
+input {
+  line-height: 1.2;
+  cursor: pointer;
+  height: 20px;
+  padding: 5px 0;
+  border-radius: 0.5rem;
+  border: 1px solid var(--Dark-grayish-violet-color);
+  animation: border 1s ease-in;
+}
+input:placeholder-shown {
+  color: var(--Dark-grayish-violet-color);
+}
+input:focus,
+input:focus-visible,
+input:focus-within,
+input:hover {
+  border: 1px solid var(--active-input-border-color-to);
+}
+button {
+  cursor: pointer;
+  line-height: 1.2;
+  text-transform: capitalize;
+  padding: 1.25rem 0;
+  background-color: var(--Very-dark-violet-color);
+  color: var(--White-color);
+  border-radius: 0.5rem;
+  align-self: stretch;
+  font-size: 1.125rem;
+}
+.completeState {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  max-width: 381px;
 }
 footer {
   position: absolute;
@@ -97,22 +134,39 @@ footer {
 }
 /* Media quiries */
 @media (max-width: 60em) {
+  .App {
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+
   .left {
     background-image: url("../src/images/bg-main-mobile.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    grid-column: 1 / span 4;
     grid-row: 1;
   }
   .right {
-    grid-column: 1 / span 4;
+    display: grid;
+    place-items: center;
+    margin-right: 5%;
   }
+  .CardBack,
+  .CardFront {
+    max-width: 76%;
+    width: 76%;
+    min-height: 65%;
+    z-index: -3;
+    position: absolute;
+  }
+  .CardFront {
+    transform: translate(4%, 62%);
+  }
+
   .CardBack {
-    width: 75%;
-    min-height: 75%;
-    left: 20%;
-    bottom: 15%;
+    transform: translate(20%, 3%);
   }
   .cardBackSpan {
     position: absolute;
@@ -120,11 +174,15 @@ footer {
     top: 44%;
     font-size: 1rem;
   }
-  .CardFront {
-    width: 75%;
-    min-height: 30%;
-    left: 5%;
-    bottom: -40%;
+  .right {
+    grid-column: 1 / span 4;
+    display: grid;
+    place-items: center;
+    margin-right: 5%;
+  }
+  .FormContainer {
+    max-width: 90%;
+    min-height: fit-content;
   }
   footer {
     font-size: 0.5rem;

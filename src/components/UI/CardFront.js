@@ -7,10 +7,19 @@ export default function CardFront() {
       <img
         src={logo}
         alt="logo"
-        style={{ alignSelf: "flex-start", fontSize: 0.5 }}
+        style={{
+          alignSelf: "flex-start",
+          transform: "scale(0.6) ",
+        }}
       />
-      <span>0000 0000 0000 0000</span>
-      <div className="CardFront-p">
+      <div style={{ alignSelf: "center" }}>0000 0000 0000 0000</div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          alignItems: "center",
+        }}
+      >
         <h3>Jane Appleseed</h3>
         <h3>00/00</h3>
       </div>

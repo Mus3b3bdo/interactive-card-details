@@ -1,8 +1,10 @@
 import "./App.css";
 import CardBack from "./components/UI/CardBack";
 import CardFront from "./components/UI/CardFront";
+import FormContainer from "./components/UI/FormContainer";
 import LeftSide from "./components/UI/LeftSide";
 import RightSide from "./components/UI/RightSide";
+import SignForm from "./SignForm";
 
 function App() {
   return (
@@ -11,7 +13,11 @@ function App() {
         <CardBack />
         <CardFront />
       </LeftSide>
-      <RightSide />
+      <RightSide>
+        <FormContainer>
+          <SignForm />
+        </FormContainer>
+      </RightSide>
       <footer>
         Challenge by
         <a
