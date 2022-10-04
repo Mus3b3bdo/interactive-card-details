@@ -155,11 +155,11 @@ export default function SignForm() {
             }}
           >
             <div style={{ display: "flex", flexDirection: "column" }}>
-              <label htmlFor="ex-date">exp. date (mm/yy)</label>
+              <label htmlFor="month year">exp. date (mm/yy)</label>
               <div style={{ display: "flex", gap: "8px" }}>
                 <input
                   type="number"
-                  id="ex-date"
+                  id="month"
                   placeholder="MM"
                   style={{ width: "100%" }}
                   onChange={(e) => handeMonthChange(e)}
@@ -168,7 +168,7 @@ export default function SignForm() {
 
                 <input
                   type="number"
-                  id="ex-date"
+                  id="year"
                   placeholder="YY"
                   style={{ width: "100%" }}
                   onChange={(e) => handeYearChange(e)}

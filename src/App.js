@@ -18,7 +18,7 @@ function App() {
           <SignForm />
         </FormContainer>
       </RightSide>
-      <footer>
+      <footer role="contentinfo">
         Challenge by
         <a
           href="https://www.frontendmentor.io?ref=challenge"
@@ -27,7 +27,19 @@ function App() {
         >
           Frontend Mentor
         </a>
-        . Coded by <a href="/">Musab Abdo</a>.
+        . Coded by{" "}
+        <a href="/">
+          <h1
+            style={{
+              fontSize: "1rem",
+              display: "inline-block",
+              marginBottom: 0,
+            }}
+          >
+            Musab Abdo
+          </h1>
+        </a>
+        .
       </footer>
     </div>
   );
