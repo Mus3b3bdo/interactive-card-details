@@ -18,7 +18,7 @@ function App() {
           <SignForm />
         </FormContainer>
       </RightSide>
-      <footer role="contentinfo">
+      <footer>
         Challenge by
         <a
           href="https://www.frontendmentor.io?ref=challenge"
