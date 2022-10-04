@@ -7,6 +7,7 @@ body {
   box-sizing: border-box;
   font-size: 1.125rem;
   font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
 }
 
 :root {
@@ -63,6 +64,7 @@ body {
   justify-content: center;
   color: var(--White-color);
   font-family: Space Grotesk;
+  gap: 23px;
 }
 .CardBack {
   background-image: url("../src/images/bg-card-back.png");
@@ -85,6 +87,7 @@ body {
 
 label {
   text-transform: uppercase;
+  margin-bottom: 11px;
 }
 input {
   line-height: 1.2;
@@ -94,6 +97,8 @@ input {
   border-radius: 0.5rem;
   border: 1px solid var(--Dark-grayish-violet-color);
   animation: border 1s ease-in;
+  height: 43px;
+  padding: 0 16px;
 }
 input:placeholder-shown {
   color: var(--Dark-grayish-violet-color);
@@ -102,18 +107,21 @@ input:focus,
 input:focus-visible,
 input:focus-within,
 input:hover {
-  border: 1px solid var(--active-input-border-color-to);
+  outline: 1px solid var(--active-input-border-color-to);
+}
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 button {
   cursor: pointer;
-  line-height: 1.2;
   text-transform: capitalize;
-  padding: 1.25rem 0;
+  padding: 1rem 0;
   background-color: var(--Very-dark-violet-color);
   color: var(--White-color);
   border-radius: 0.5rem;
   align-self: stretch;
   font-size: 1.125rem;
+  margin: 5px 0;
 }
 .completeState {
   display: flex;
@@ -162,11 +170,11 @@ footer {
     position: absolute;
   }
   .CardFront {
-    transform: translate(4%, 62%);
+    transform: translate(4%, 60%);
   }
 
   .CardBack {
-    transform: translate(20%, 3%);
+    transform: translateX(26%);
   }
   .cardBackSpan {
     position: absolute;
@@ -175,14 +183,14 @@ footer {
     font-size: 1rem;
   }
   .right {
-    grid-column: 1 / span 4;
+    grid-column: 1;
     display: grid;
     place-items: center;
-    margin-right: 5%;
   }
+
   .FormContainer {
-    max-width: 90%;
-    min-height: fit-content;
+    max-width: 85%;
+    width: 85%;
   }
   footer {
     font-size: 0.5rem;
